@@ -1,4 +1,4 @@
-﻿namespace Backend.Domain;
+namespace Backend.Domain;
 
 using System.Text.Json.Serialization;
 
@@ -9,7 +9,7 @@ public class TestRun
     public int TestScenarioId { get; set; }
 
     [JsonIgnore]
-    public TestScenario TestScenario { get; set; }
+    public TestScenario TestScenario { get; set; } = null!;
 
     public DateTime CreatedDate { get; set; }
 
