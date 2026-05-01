@@ -1,4 +1,4 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Net.Http;
 using System.Text;
@@ -15,7 +15,6 @@ namespace Backend.SystemTests
             BaseAddress = new Uri("https://localhost:7293") // поменяй порт
         };
 
-        private int _scenarioId;
 
         private async Task<int> CreateScenario()
         {

@@ -1,4 +1,4 @@
-﻿namespace Client.Models;
+namespace Client.Models;
 
 public enum TestRunStatus
 {
@@ -23,7 +23,7 @@ public class TestRun
 public class EmulatorConfiguration
 {
     public int Id { get; set; }
-    public string AvdName { get; set; }
-    public string PlatformVersion { get; set; }
+    public string AvdName { get; set; } = string.Empty;
+    public string PlatformVersion { get; set; } = string.Empty;
     public bool IsActive { get; set; }
 }

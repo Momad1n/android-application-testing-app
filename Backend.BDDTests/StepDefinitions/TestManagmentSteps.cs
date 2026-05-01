@@ -1,4 +1,4 @@
-﻿using TechTalk.SpecFlow;
+using TechTalk.SpecFlow;
 using FluentAssertions;
 using System.Net.Http;
 using System.Net.Http.Json;
@@ -11,8 +11,8 @@ namespace Backend.BDDTests.StepDefinitions
     {
         // Укажите URL вашего запущенного бэкенда
         private readonly HttpClient _client = new HttpClient { BaseAddress = new System.Uri("https://localhost:7293/") };
-        private HttpResponseMessage _response;
-        private string _responseString;
+        private HttpResponseMessage _response = null!;
+        private string _responseString = null!;
 
         // --- GIVEN ---
 
