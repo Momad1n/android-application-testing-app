@@ -12,26 +12,26 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v4 # Обновили до v4
+      uses: actions/checkout@v4
 
     - name: Setup .NET
-      uses: actions/setup-dotnet@v4 # Обновили до v4
+      uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: '8.0.x'
+        dotnet-version: '8.0.x' # Убедись, что версия совпадает с твоим проектом (8.0 или 9.0)
 
     - name: Restore dependencies
       run: dotnet restore
 
-    - name: Build project (with Static Analysis)
+    - name: Build project
       run: dotnet build --no-restore -c Release
 
-    - name: Run Tests & Collect Coverage
-      # Мы убрали жесткий порог /p:Threshold=70, чтобы билд точно стал зеленым для отчета. 
-      # Если захочешь, добавишь его позже.
-      run: dotnet test --no-build -c Release --verbosity normal /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura
+    - name: Run Unit Tests & Collect Coverage
+      # ФИКС: Добавляем фильтр --filter FullyQualifiedName~UnitTests 
+      # Чтобы не запускать тесты, требующие запущенного сервера (localhost)
+      run: dotnet test --no-build -c Release --verbosity normal --filter FullyQualifiedName~UnitTests /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura
       
     - name: Upload Coverage Artifact
-      uses: actions/upload-artifact@v4 # ФИКС ЗДЕСЬ: Обновили до v4
+      uses: actions/upload-artifact@v4
       with:
         name: code-coverage-report
         path: '**/coverage.cobertura.xml'
