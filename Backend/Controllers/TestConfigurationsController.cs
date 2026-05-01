@@ -46,7 +46,7 @@ public class TestConfigurationsController : ControllerBase
 
         var config = new TestConfiguration
         {
-            TestScenarioId = request.TestScenarioId,
+            TestScenarioId = (int)request.TestScenarioId,
             DeviceName = request.DeviceName,
             PlatformVersion = request.PlatformVersion,
             AdditionalCapabilities = request.AdditionalCapabilities,

@@ -1,4 +1,4 @@
-﻿using Backend.Data;
+using Backend.Data;
 using Backend.Domain;
 using Backend.DTO;
 using Microsoft.AspNetCore.Mvc;
@@ -33,7 +33,7 @@ public class TestScenariosController : ControllerBase
             Name = request.Name,
             RobotFile = request.RobotFile,
             Description = request.Description,
-            TestApplicationId = request.TestApplicationId,
+            TestApplicationId = (int)request.TestApplicationId,
             CreatedAt = DateTime.UtcNow
         };
 
