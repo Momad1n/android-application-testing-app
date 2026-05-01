@@ -1,20 +1,25 @@
-﻿namespace Backend.Services;
+namespace Backend.Services;
 
 public class AuthenticationService
 {
-    // Метод с косяками для демонстрации работы анализатора
-    public void ValidateUserCheck(string username)
+    public static bool ValidateUserCheck(string username)
     {
-        // 1. Косяк S1121: Присваивание в условии (вместо сравнения ==)
-        bool isAdmin = false;
-        if (isAdmin = true)
+        // Исправлено S2325: Метод помечен как static, так как не использует данные экземпляра
+        if (string.IsNullOrWhiteSpace(username))
         {
-            // 2. Косяк S1135: TODO (сделаем его ошибкой)
-            // TODO: Реализовать логику проверки админа
+            return false;
         }
 
-        // 3. Косяк S2190: Рекурсия без выхода (бесконечный цикл, вешающий сервак)
-        ValidateUserCheck(username); 
+        // Исправлено S1121: Используется сравнение (==) вместо присваивания (=)
+        bool isAdmin = username.Equals("admin", StringComparison.OrdinalIgnoreCase);
+
+        if (isAdmin)
+        {
+            Console.WriteLine($"User {username} has admin privileges.");
+        }
+
+        // Исправлено S2190: Рекурсивный вызов удален, предотвращено переполнение стека
+        return true;
     }
 
     public bool IsPasswordStrong(string password)

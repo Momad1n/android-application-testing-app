@@ -1,4 +1,4 @@
-﻿using System.Text.Json.Serialization;
+using System.Text.Json.Serialization;
 
 namespace Backend.Domain;
 
@@ -20,8 +20,8 @@ public class TestScenario
     public TestApplication TestApplication { get; set; }
 
     [JsonIgnore]
-    public List<TestConfiguration> TestConfigurations { get; set; } = new();
+    public List<TestConfiguration> TestConfigurations { get; set; } = new ();
 
     [JsonIgnore]
-    public List<TestRun> TestRuns { get; set; } = new();
+    public List<TestRun> TestRuns { get; set; } = new ();
 }
