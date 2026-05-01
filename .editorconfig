@@ -1,0 +1,36 @@
+root = True
+
+[*]
+# Устанавливаем кодировку
+charset = utf-8
+indent_style = space
+indent_size = 4
+
+# --- Настройка StyleCop ---
+
+[*.cs]
+# --- Глушим косметику (SA) ---
+dotnet_diagnostic.SA1208.severity = none    # Порядок using (System в начале)
+dotnet_diagnostic.SA1503.severity = none    # Требование фигурных скобок в if
+dotnet_diagnostic.SA1505.severity = none    # Пробел после открывающей скобки
+dotnet_diagnostic.SA1507.severity = none    # Несколько пустых строк подряд
+dotnet_diagnostic.SA1508.severity = none    # Пустая строка перед закрывающей скобкой
+dotnet_diagnostic.SA1512.severity = none    # Комментарии и пустые строки
+dotnet_diagnostic.SA1515.severity = none    # Пустая строка перед комментарием
+dotnet_diagnostic.SA1516.severity = none    # Пустая строка между элементами
+dotnet_diagnostic.SA1602.severity = none    # XML-комментарии для Enum
+dotnet_diagnostic.SA1116.severity = none    # Форматирование параметров на новых строках
+dotnet_diagnostic.SA1000.severity = none    # Пробелы вокруг ключевых слов (new(), await() и т.д.)
+dotnet_diagnostic.SA0001.severity = none    # Жалоба на отсутствие генерации XML-документации
+
+# --- Глушим занудство Sonar (S) ---
+dotnet_diagnostic.S1075.severity = none     # Хардкод URI/путей (в лабе это ок)
+dotnet_diagnostic.S1186.severity = none     # Пустые методы (нужны для миграций)
+
+# --- А вот важные вещи сделаем ОШИБКАМИ ---
+
+# SA1000: Пробелы в ключевых словах (важно для читаемости)
+dotnet_diagnostic.SA1000.severity = error
+
+# S1135: Забытые TODO в коде (SonarAnalyzer)
+dotnet_diagnostic.S1135.severity = warning
