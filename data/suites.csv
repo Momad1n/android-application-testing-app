@@ -1,0 +1,5 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","1","IsPasswordStrong_NullOrEmptyPassword_ReturnsFalse","","2026-05-01","passed","2026-05-01","","Backend.UnitTests.PasswordPolicyTests","Backend.UnitTests.PasswordPolicyTests",""
+"","0","IsPasswordStrong_PasswordShorterThan8_ReturnsFalse","","2026-05-01","passed","2026-05-01","","Backend.UnitTests.PasswordPolicyTests","Backend.UnitTests.PasswordPolicyTests",""
+"","0","IsPasswordStrong_ValidPassword_ReturnsTrue","","2026-05-01","passed","2026-05-01","","Backend.UnitTests.PasswordPolicyTests","Backend.UnitTests.PasswordPolicyTests",""
+"","6","IsPasswordStrong_LengthIs8ButNoDigit_ReturnsFalse","","2026-05-01","passed","2026-05-01","","Backend.UnitTests.PasswordPolicyTests","Backend.UnitTests.PasswordPolicyTests",""
