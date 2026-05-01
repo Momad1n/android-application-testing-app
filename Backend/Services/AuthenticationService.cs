@@ -22,7 +22,7 @@ public class AuthenticationService
         return true;
     }
 
-    public bool IsPasswordStrong(string password)
+    public static bool IsPasswordStrong(string password)
     {
         // Если пароль пустой или null, он точно не надежный
         if (string.IsNullOrEmpty(password))

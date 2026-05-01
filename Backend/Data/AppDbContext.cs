@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 
 namespace Backend.Data;
 
@@ -18,9 +18,9 @@ public class AppDbContext : DbContext
 
     public DbSet<EmulatorConfiguration> EmulatorConfigurations { get; set; }
 
-    protected override void OnModelCreating(ModelBuilder builder)
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        builder.Entity<TestRun>(entity =>
+        modelBuilder.Entity<TestRun>(entity =>
         {
             entity.Property(x => x.Status)
                   .HasConversion<int>();

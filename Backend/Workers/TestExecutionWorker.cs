@@ -1,4 +1,4 @@
-﻿using Backend.Data;
+using Backend.Data;
 using Backend.Domain;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
@@ -212,7 +212,7 @@ public class TestExecutionWorker : BackgroundService
                 return (TestRunStatus.Timeout, "Timeout reached");
             }
 
-            cts.Cancel();
+            await cts.CancelAsync();
 
             var log = outputBuilder.ToString();
             var status = log.Contains("| PASS |") ? TestRunStatus.Passed : TestRunStatus.Failed;

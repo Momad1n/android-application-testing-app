@@ -28,6 +28,8 @@ dotnet_diagnostic.SA1602.severity = none    # XML-комментарии для 
 dotnet_diagnostic.SA1116.severity = none    # Форматирование параметров на новых строках
 dotnet_diagnostic.SA1000.severity = none    # Пробелы вокруг ключевых слов (new(), await() и т.д.)
 dotnet_diagnostic.SA0001.severity = none    # Жалоба на отсутствие генерации XML-документации
+dotnet_diagnostic.S6966.severity = none
+dotnet_diagnostic.S6965.severity = none
 
 # --- Глушим занудство Sonar (S) ---
 dotnet_diagnostic.S1075.severity = none     # Хардкод URI/путей (в лабе это ок)

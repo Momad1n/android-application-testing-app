@@ -21,6 +21,7 @@ public class TestScenario
     public TestApplication TestApplication { get; set; } = null!;
 
     [JsonIgnore]
-    public List<TestConfiguration> TestConfigurations { get; set; } = new(); [JsonIgnore]
+    public List<TestConfiguration> TestConfigurations { get; set; } = new();
+    [JsonIgnore]
     public List<TestRun> TestRuns { get; set; } = new();
 }

@@ -1,4 +1,4 @@
-﻿using Backend.Data;
+using Backend.Data;
 using Backend.Domain;
 using Backend.DTO;
 using Microsoft.AspNetCore.Mvc;
