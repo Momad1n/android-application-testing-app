@@ -1,16 +1,24 @@
-﻿using System.Linq;
-
-namespace Backend.Services;
+﻿namespace Backend.Services;
 
 public class AuthenticationService
 {
+    // Метод с косяками для демонстрации работы анализатора
+    public void ValidateUserCheck(string username)
+    {
+        // 1. Косяк S1121: Присваивание в условии (вместо сравнения ==)
+        bool isAdmin = false;
+        if (isAdmin = true)
+        {
+            // 2. Косяк S1135: TODO (сделаем его ошибкой)
+            // TODO: Реализовать логику проверки админа
+        }
+
+        // 3. Косяк S2190: Рекурсия без выхода (бесконечный цикл, вешающий сервак)
+        ValidateUserCheck(username); 
+    }
+
     public bool IsPasswordStrong(string password)
     {
-        // Если пароль пустой или null, он точно не надежный
-        if (string.IsNullOrEmpty(password))
-            return false;
-
-        // Требование: длина >= 8 И содержит хотя бы одну цифру
-        return password.Length >= 8 && password.Any(char.IsDigit);
+        return password.Length >= 8;
     }
 }

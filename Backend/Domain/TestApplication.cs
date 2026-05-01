@@ -16,5 +16,5 @@ public class TestApplication
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
     [JsonIgnore]
-    public List<TestScenario> TestScenarios { get; set; } = new();
+    public List<TestScenario> TestScenarios { get; set; } = new ();
 }
