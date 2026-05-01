@@ -6,6 +6,12 @@ on:
   pull_request:
     branches: [ "main" ]
 
+# Даем права боту GitHub для создания ветки gh-pages и заливки туда Allure-отчета
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
 jobs:
   build_and_test:
     runs-on: ubuntu-latest
@@ -17,21 +23,75 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: '8.0.x' # Убедись, что версия совпадает с твоим проектом (8.0 или 9.0)
+        dotnet-version: '8.0.x'
 
     - name: Restore dependencies
       run: dotnet restore
 
-    - name: Build project
-      run: dotnet build --no-restore -c Release
+    - name: Build and Run Static Analysis
+      # Строгая проверка: если есть ошибки анализатора, билд упадет
+      run: dotnet build --no-restore -c Release -warnaserror
 
-    - name: Run Unit Tests & Collect Coverage
-      # ФИКС: Добавляем фильтр --filter FullyQualifiedName~UnitTests 
-      # Чтобы не запускать тесты, требующие запущенного сервера (localhost)
-      run: dotnet test --no-build -c Release --verbosity normal --filter FullyQualifiedName~UnitTests /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura
+    - name: Run Unit Tests & Check Coverage
+      # Запускаем юнит-тесты. Собираем покрытие и логируем результаты для Allure (формат trx)
+      run: dotnet test --no-build -c Release --verbosity normal --filter FullyQualifiedName~UnitTests /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura /p:Threshold=70 --logger "trx;LogFileName=test-results.trx" --results-directory ./TestResults
       
+    - name: Run Integration / BDD Tests (Optional)
+      # Запускаем системные тесты. continue-on-error: true означает, что если они упадут (из-за отсутствия БД), 
+      # пайплайн пойдет дальше, чтобы мы все равно сгенерировали Allure отчет!
+      run: dotnet test --no-build -c Release --verbosity normal --filter FullyQualifiedName~BDDTests --logger "trx;LogFileName=bdd-results.trx" --results-directory ./TestResults
+      continue-on-error: true
+
     - name: Upload Coverage Artifact
       uses: actions/upload-artifact@v4
       with:
         name: code-coverage-report
         path: '**/coverage.cobertura.xml'
+
+    - name: Upload Test Results for Allure
+      uses: actions/upload-artifact@v4
+      with:
+        name: test-results
+        path: ./TestResults/*.trx
+        retention-days: 1
+
+  generate_allure_report:
+    needs: build_and_test
+    runs-on: ubuntu-latest
+    if: always() # Запускать всегда, даже если тесты упали
+
+    steps:
+    - name: Download Test Results
+      uses: actions/download-artifact@v4
+      with:
+        name: test-results
+        path: test-results
+
+    - name: Setup .NET Core (for trx2allure)
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0.x'
+
+    - name: Install trx2allure tool
+      # Утилита для конвертации стандартных логов .NET (.trx) в формат Allure
+      run: dotnet tool install -g trx2allure
+
+    - name: Convert TRX to Allure Results
+      run: trx2allure test-results/*.trx -o allure-results
+
+    - name: Generate Allure Report
+      uses: simple-elf/allure-report-action@master
+      id: allure-report
+      with:
+        allure_results: allure-results
+        gh_pages: gh-pages
+        allure_report: allure-report
+        allure_history: allure-history
+        keep_reports: 5
+
+    - name: Deploy Allure Report to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v4
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_branch: gh-pages
+        publish_dir: allure-history
