@@ -44,9 +44,14 @@ public class TestConfigurationsController : ControllerBase
             return BadRequest($"TestScenario with Id {request.TestScenarioId} does not exist.");
         }
 
+        if (request.TestScenarioId == null)
+        {
+            return this.BadRequest("TestScenarioId is required.");
+        }
+
         var config = new TestConfiguration
         {
-            TestScenarioId = (int)request.TestScenarioId,
+            TestScenarioId = request.TestScenarioId.Value,
             DeviceName = request.DeviceName,
             PlatformVersion = request.PlatformVersion,
             AdditionalCapabilities = request.AdditionalCapabilities,

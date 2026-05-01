@@ -28,12 +28,17 @@ public class TestScenariosController : ControllerBase
             return BadRequest($"TestApplication with Id {request.TestApplicationId} does not exist.");
         }
 
+        if (request.TestApplicationId == null)
+        {
+            return this.BadRequest("TestScenarioId is required.");
+        }
+
         var scenario = new TestScenario
         {
             Name = request.Name,
             RobotFile = request.RobotFile,
             Description = request.Description,
-            TestApplicationId = (int)request.TestApplicationId,
+            TestApplicationId = request.TestApplicationId.Value,
             CreatedAt = DateTime.UtcNow
         };
 

@@ -1,8 +1,8 @@
 namespace Backend.Services;
 
-public class AuthenticationService
+public static class AuthenticationService
 {
-    public static bool ValidateUserCheck(string username)
+    public static bool ValidateUserCheck(string? username)
     {
         // Исправлено S2325: Метод помечен как static, так как не использует данные экземпляра
         if (string.IsNullOrWhiteSpace(username))
@@ -22,7 +22,7 @@ public class AuthenticationService
         return true;
     }
 
-    public static bool IsPasswordStrong(string password)
+    public static bool IsPasswordStrong(string? password)
     {
         // Если пароль пустой или null, он точно не надежный
         if (string.IsNullOrEmpty(password))
