@@ -1,0 +1,182 @@
+﻿@page "/api-console"
+@inject HttpClient Http
+
+<h1>API Console</h1>
+<p class="text-muted">Выберите шаблон запроса или введите данные вручную.</p>
+
+<div class="row g-3 align-items-end mb-3">
+    <div class="col-md-12">
+        <label class="fw-bold text-primary">Быстрые шаблоны (Пресеты):</label>
+        <select class="form-select border-primary" @onchange="OnPresetChanged">
+            <option value="">-- Выбери запрос из списка --</option>
+            @foreach (var preset in presets)
+            {
+                <option value="@preset.Title">@preset.Title</option>
+            }
+        </select>
+    </div>
+</div>
+
+<div class="row g-3 align-items-center">
+    <div class="col-auto">
+        <label>HTTP Method:</label>
+        <select class="form-select" @bind="httpMethod">
+            <option value="GET">GET</option>
+            <option value="POST">POST</option>
+            <option value="PUT">PUT</option>
+            <option value="DELETE">DELETE</option>
+        </select>
+    </div>
+    <div class="col-md-6">
+        <label>Endpoint (можно менять ID):</label>
+        <input type="text" class="form-control" @bind="endpoint" placeholder="api/TestRuns" />
+    </div>
+</div>
+
+<div class="mt-3">
+    <label>Request Body (JSON):</label>
+    <textarea class="form-control" rows="6" @bind="requestBody" placeholder='{"key":"value"}'></textarea>
+</div>
+
+<div class="mt-3">
+    <button class="btn btn-success px-4" @onclick="SendRequest" disabled="@isSending">
+        @if (isSending)
+        {
+            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+            <span> Отправка...</span>
+        }
+        else
+        {
+            <span>Отправить запрос</span>
+        }
+    </button>
+</div>
+
+<div class="mt-4">
+    <label>Response Status: <strong class="@(responseStatus.StartsWith("2") ? "text-success" : "text-danger")">@responseStatus</strong></label>
+    <pre class="response-box">@responseContent</pre>
+</div>
+
+@code {
+    private string httpMethod = "GET";
+    private string endpoint = "api/TestRuns";
+    private string requestBody = "";
+    private string responseContent = "{}";
+    private string responseStatus = "-";
+    private bool isSending = false;
+
+    // Класс для хранения шаблонов
+    private class ApiPreset
+    {
+        public string Title { get; set; } = "";
+        public string Method { get; set; } = "GET";
+        public string Endpoint { get; set; } = "";
+        public string Body { get; set; } = "";
+    }
+
+    // Список готовых правильных запросов
+    private List<ApiPreset> presets = new()
+    {
+        new ApiPreset { Title = "1. Получить все Test Runs", Method = "GET", Endpoint = "api/TestRuns", Body = "" },
+        
+        new ApiPreset {
+            Title = "2. Запустить тест (укажи ID сценария!)",
+            Method = "POST",
+            Endpoint = "api/tests/run/1",
+            Body = "" // Body пустое, т.к. ID передается в URL
+        },
+
+        new ApiPreset {
+            Title = "3. Создать приложение (TestApplication)",
+            Method = "POST",
+            Endpoint = "api/TestApplications",
+            Body = "{\n  \"name\": \"My Demo App\",\n  \"packageName\": \"com.example.demo\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Приложение для защиты лабы\"\n}"
+        },
+
+        new ApiPreset {
+            Title = "4. Создать сценарий (TestScenario)",
+            Method = "POST",
+            Endpoint = "api/TestScenarios",
+            Body = "{\n  \"name\": \"Авторизация\",\n  \"robotFile\": \"DemoTest.robot\",\n  \"description\": \"Проверка логина и пароля\",\n  \"testApplicationId\": 1\n}"
+        },
+
+        new ApiPreset {
+            Title = "5. Создать конфиг теста (TestConfiguration)",
+            Method = "POST",
+            Endpoint = "api/TestConfigurations",
+            Body = "{\n  \"testScenarioId\": 1,\n  \"deviceName\": \"Pixel_5\",\n  \"platformVersion\": \"11.0\",\n  \"additionalCapabilities\": \"appWaitActivity:*\"\n}"
+        },
+
+        new ApiPreset {
+            Title = "6. Добавить эмулятор (EmulatorConfiguration)",
+            Method = "POST",
+            Endpoint = "api/EmulatorConfigurations",
+            Body = "{\n  \"avdName\": \"Pixel_5_API_30\",\n  \"platformVersion\": \"11.0\",\n  \"isActive\": true\n}"
+        },
+
+        new ApiPreset { Title = "7. Получить все эмуляторы", Method = "GET", Endpoint = "api/EmulatorConfigurations", Body = "" }
+    };
+
+    // Событие при выборе элемента из выпадающего списка
+    private void OnPresetChanged(ChangeEventArgs e)
+    {
+        var selectedTitle = e.Value?.ToString();
+        var preset = presets.FirstOrDefault(p => p.Title == selectedTitle);
+        
+        if (preset != null)
+        {
+            httpMethod = preset.Method;
+            endpoint = preset.Endpoint;
+            requestBody = preset.Body;
+            responseContent = "{}";
+            responseStatus = "-";
+        }
+    }
+
+    private async Task SendRequest()
+    {
+        isSending = true;
+        responseContent = "Loading...";
+        responseStatus = "-";
+        
+        try
+        {
+            var request = new HttpRequestMessage(new HttpMethod(httpMethod), endpoint);
+
+            if ((httpMethod == "POST" || httpMethod == "PUT") && !string.IsNullOrWhiteSpace(requestBody))
+            {
+                request.Content = new StringContent(requestBody, System.Text.Encoding.UTF8, "application/json");
+            }
+
+            var response = await Http.SendAsync(request);
+            responseStatus = $"{(int)response.StatusCode} {response.ReasonPhrase}";
+            
+            var content = await response.Content.ReadAsStringAsync();
+            
+            // Если ответ пустой, пишем об этом
+            responseContent = string.IsNullOrWhiteSpace(content) ? "No Content (Пустой ответ)" : content;
+        }
+        catch (Exception ex)
+        {
+            responseStatus = "Error";
+            responseContent = ex.Message;
+        }
+        finally
+        {
+            isSending = false;
+        }
+    }
+}
+
+<style>
+    .response-box {
+        background-color: #2b2b2b;
+        color: #a9b7c6;
+        padding: 15px;
+        border-radius: 6px;
+        white-space: pre-wrap;
+        max-height: 400px;
+        overflow-y: auto;
+        font-family: 'Courier New', Courier, monospace;
+    }
+</style>

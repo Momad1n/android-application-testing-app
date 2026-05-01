@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.3 on win32)" generated="2026-03-19T22:52:51.001663" rpa="false" schemaversion="5">
+<suite id="s1" name="DemoTest" source="C:\Users\Momadin\source\repos\AndroidApplicationTestApp\Backend\RobotTests\DemoTest.robot">
+<kw name="Open App" type="SETUP">
+<kw name="Open Application" owner="AppiumLibrary">
+<kw name="Capture Page Screenshot" owner="AppiumLibrary">
+<msg time="2026-03-19T22:52:51.598779" level="FAIL">No application is open</msg>
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<status status="FAIL" start="2026-03-19T22:52:51.598558" elapsed="0.003418">No application is open</status>
+</kw>
+<msg time="2026-03-19T22:52:51.602751" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg time="2026-03-19T22:52:51.602894" level="FAIL">WebDriverException: Message: The application at 'C:\Windows\System32\UsersMomadinAndroidStudioProjectsMusicApplicationappbuildoutputsapkdebugapp-debug.apk' does not exist or is not accessible
+Stacktrace:
+UnknownError: The application at 'C:\Windows\System32\UsersMomadinAndroidStudioProjectsMusicApplicationappbuildoutputsapkdebugapp-debug.apk' does not exist or is not accessible
+    at getResponseForW3CError (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\protocol\errors.js:824:36)
+    at asyncHandler (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\protocol\protocol.js:430:77)
+The above error is caused by
+Error: The application at 'C:\Windows\System32\UsersMomadinAndroidStudioProjectsMusicApplicationappbuildoutputsapkdebugapp-debug.apk' does not exist or is not accessible
+    at C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\basedriver\helpers.js:208:19</msg>
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>deviceName=${DEVICE_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION}</arg>
+<arg>app=${APP}</arg>
+<arg>appium:automationName=UiAutomator2</arg>
+<doc>Opens a new application to the given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.19/guides/caps/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | No     | alias             |</doc>
+<status status="FAIL" start="2026-03-19T22:52:51.198871" elapsed="0.404995">WebDriverException: Message: The application at 'C:\Windows\System32\UsersMomadinAndroidStudioProjectsMusicApplicationappbuildoutputsapkdebugapp-debug.apk' does not exist or is not accessible
+Stacktrace:
+UnknownError: The application at 'C:\Windows\System32\UsersMomadinAndroidStudioProjectsMusicApplicationappbuildoutputsapkdebugapp-debug.apk' does not exist or is not accessible
+    at getResponseForW3CError (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\protocol\errors.js:824:36)
+    at asyncHandler (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\protocol\protocol.js:430:77)
+The above error is caused by
+Error: The application at 'C:\Windows\System32\UsersMomadinAndroidStudioProjectsMusicApplicationappbuildoutputsapkdebugapp-debug.apk' does not exist or is not accessible
+    at C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\basedriver\helpers.js:208:19</status>
+</kw>
+<status status="FAIL" start="2026-03-19T22:52:51.198198" elapsed="0.405803">WebDriverException: Message: The application at 'C:\Windows\System32\UsersMomadinAndroidStudioProjectsMusicApplicationappbuildoutputsapkdebugapp-debug.apk' does not exist or is not accessible
+Stacktrace:
+UnknownError: The application at 'C:\Windows\System32\UsersMomadinAndroidStudioProjectsMusicApplicationappbuildoutputsapkdebugapp-debug.apk' does not exist or is not accessible
+    at getResponseForW3CError (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\protocol\errors.js:824:36)
+    at asyncHandler (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\protocol\protocol.js:430:77)
+The above error is caused by
+Error: The application at 'C:\Windows\System32\UsersMomadinAndroidStudioProjectsMusicApplicationappbuildoutputsapkdebugapp-debug.apk' does not exist or is not accessible
+    at C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\basedriver\helpers.js:208:19</status>
+</kw>
+<test id="s1-t1" name="Demo Test" line="28">
+<doc>Простейший тест</doc>
+<status status="FAIL" start="2026-03-19T22:52:51.604081" elapsed="0.000286">Parent suite setup failed:
+WebDriverException: Message: The application at 'C:\Windows\System32\UsersMomadinAndroidStudioProjectsMusicApplicationappbuildoutputsapkdebugapp-debug.apk' does not exist or is not accessible
+Stacktrace:
+UnknownError: The application at 'C:\Windows\System32\UsersMomadinAndroidStudioProjectsMusicApplicationappbuildoutputsapkdebugapp-debug.apk' does not exist or is not accessible
+    at getResponseForW3CError (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\protocol\errors.js:824:36)
+    at asyncHandler (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\protocol\protocol.js:430:77)
+The above error is caused by
+Error: The application at 'C:\Windows\System32\UsersMomadinAndroidStudioProjectsMusicApplicationappbuildoutputsapkdebugapp-debug.apk' does not exist or is not accessible
+    at C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\basedriver\helpers.js:208:19</status>
+</test>
+<kw name="Close App" type="TEARDOWN">
+<kw name="Close Application" owner="AppiumLibrary">
+<kw name="Capture Page Screenshot" owner="AppiumLibrary">
+<msg time="2026-03-19T22:52:51.605140" level="FAIL">No application is open</msg>
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<status status="FAIL" start="2026-03-19T22:52:51.605033" elapsed="0.000872">No application is open</status>
+</kw>
+<msg time="2026-03-19T22:52:51.606611" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg time="2026-03-19T22:52:51.606715" level="FAIL">No application is open</msg>
+<doc>Closes the current application and the webdriver session.</doc>
+<status status="FAIL" start="2026-03-19T22:52:51.604922" elapsed="0.002254">No application is open</status>
+</kw>
+<status status="FAIL" start="2026-03-19T22:52:51.604773" elapsed="0.002493">No application is open</status>
+</kw>
+<status status="FAIL" start="2026-03-19T22:52:51.003056" elapsed="0.604255">Suite setup failed:
+WebDriverException: Message: The application at 'C:\Windows\System32\UsersMomadinAndroidStudioProjectsMusicApplicationappbuildoutputsapkdebugapp-debug.apk' does not exist or is not accessible
+Stacktrace:
+UnknownError: The application at 'C:\Windows\System32\UsersMomadinAndroidStudioProjectsMusicApplicationappbuildoutputsapkdebugapp-debug.apk' does not exist or is not accessible
+    at getResponseForW3CError (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\protocol\errors.js:824:36)
+    at asyncHandler (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\protocol\protocol.js:430:77)
+The above error is caused by
+Error: The application at 'C:\Windows\System32\UsersMomadinAndroidStudioProjectsMusicApplicationappbuildoutputsapkdebugapp-debug.apk' does not exist or is not accessible
+    at C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\basedriver\helpers.js:208:19
+
+Also suite teardown failed:
+No application is open</status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="DemoTest" id="s1" pass="0" fail="1" skip="0">DemoTest</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2026-03-19T22:52:51.602751" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg time="2026-03-19T22:52:51.606611" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+</errors>
+</robot>

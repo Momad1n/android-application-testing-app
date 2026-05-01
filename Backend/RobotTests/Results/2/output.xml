@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.3 on win32)" generated="2026-03-16T18:25:39.471902" rpa="false" schemaversion="5">
+<suite id="s1" name="DemoTest" source="C:\Users\Momadin\source\repos\AndroidApplicationTestApp\Backend\RobotTests\DemoTest.robot">
+<test id="s1-t1" name="Demo Test" line="5">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-03-16T18:25:39.506070" level="INFO">Hello from Robot Framework</msg>
+<arg>Hello from Robot Framework</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-03-16T18:25:39.505833" elapsed="0.000291"/>
+</kw>
+<status status="PASS" start="2026-03-16T18:25:39.505278" elapsed="0.000948"/>
+</test>
+<status status="PASS" start="2026-03-16T18:25:39.473245" elapsed="0.033231"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="DemoTest" id="s1" pass="1" fail="0" skip="0">DemoTest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

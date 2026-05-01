@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.3 on win32)" generated="2026-03-19T22:58:14.028560" rpa="false" schemaversion="5">
+<suite id="s1" name="DemoTest" source="C:\Users\Momadin\source\repos\AndroidApplicationTestApp\Backend\RobotTests\DemoTest.robot">
+<kw name="Open App" type="SETUP">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>deviceName=${DEVICE_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION}</arg>
+<arg>app=${APP}</arg>
+<arg>appium:automationName=UiAutomator2</arg>
+<doc>Opens a new application to the given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.19/guides/caps/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | No     | alias             |</doc>
+<status status="PASS" start="2026-03-19T22:58:14.216473" elapsed="16.006731"/>
+</kw>
+<status status="PASS" start="2026-03-19T22:58:14.216022" elapsed="16.007320"/>
+</kw>
+<test id="s1-t1" name="Demo Test" line="28">
+<kw name="Log" owner="BuiltIn" type="SETUP">
+<msg time="2026-03-19T22:58:30.224091" level="INFO">Starting test</msg>
+<arg>Starting test</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-03-19T22:58:30.223831" elapsed="0.000305"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-03-19T22:58:30.224379" level="INFO">Открываем приложение</msg>
+<arg>Открываем приложение</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-03-19T22:58:30.224222" elapsed="0.000193"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-03-19T22:58:35.224844" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-03-19T22:58:30.224487" elapsed="5.000458"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-03-19T22:58:35.225304" level="INFO">Приложение открылось</msg>
+<arg>Приложение открылось</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-03-19T22:58:35.225078" elapsed="0.000266"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${True}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2026-03-19T22:58:35.225422" elapsed="0.000250"/>
+</kw>
+<kw name="Log" owner="BuiltIn" type="TEARDOWN">
+<msg time="2026-03-19T22:58:35.225951" level="INFO">Test finished</msg>
+<arg>Test finished</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-03-19T22:58:35.225806" elapsed="0.000177"/>
+</kw>
+<doc>Простейший тест</doc>
+<status status="PASS" start="2026-03-19T22:58:30.223430" elapsed="5.002589"/>
+</test>
+<kw name="Close App" type="TEARDOWN">
+<kw name="Close Application" owner="AppiumLibrary">
+<doc>Closes the current application and the webdriver session.</doc>
+<status status="PASS" start="2026-03-19T22:58:35.226609" elapsed="0.797955"/>
+</kw>
+<status status="PASS" start="2026-03-19T22:58:35.226468" elapsed="0.798249"/>
+</kw>
+<status status="PASS" start="2026-03-19T22:58:14.029921" elapsed="21.994839"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="DemoTest" id="s1" pass="1" fail="0" skip="0">DemoTest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

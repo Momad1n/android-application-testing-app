@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.3 on win32)" generated="2026-03-21T00:06:31.242408" rpa="false" schemaversion="5">
+<suite id="s1" name="DemoTest" source="C:\Users\Momadin\source\repos\AndroidApplicationTestApp\Backend\RobotTests\DemoTest.robot">
+<kw name="Open App" type="SETUP">
+<kw name="Open Application" owner="AppiumLibrary">
+<kw name="Capture Page Screenshot" owner="AppiumLibrary">
+<msg time="2026-03-21T00:06:40.684076" level="FAIL">No application is open</msg>
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<status status="FAIL" start="2026-03-21T00:06:40.683815" elapsed="0.132500">No application is open</status>
+</kw>
+<msg time="2026-03-21T00:06:40.817154" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg time="2026-03-21T00:06:40.817319" level="FAIL">ProtocolError: ('Connection aborted.', ConnectionResetError(10054, 'Удаленный хост принудительно разорвал существующее подключение', None, 10054, None))</msg>
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>deviceName=${DEVICE_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION}</arg>
+<arg>app=${APP}</arg>
+<arg>appium:automationName=UiAutomator2</arg>
+<doc>Opens a new application to the given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.19/guides/caps/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | No     | alias             |</doc>
+<status status="FAIL" start="2026-03-21T00:06:31.467677" elapsed="9.352683">ProtocolError: ('Connection aborted.', ConnectionResetError(10054, 'Удаленный хост принудительно разорвал существующее подключение', None, 10054, None))</status>
+</kw>
+<status status="FAIL" start="2026-03-21T00:06:31.467126" elapsed="9.353373">ProtocolError: ('Connection aborted.', ConnectionResetError(10054, 'Удаленный хост принудительно разорвал существующее подключение', None, 10054, None))</status>
+</kw>
+<test id="s1-t1" name="Demo Test" line="28">
+<doc>Простейший тест</doc>
+<status status="FAIL" start="2026-03-21T00:06:40.820581" elapsed="0.000289">Parent suite setup failed:
+ProtocolError: ('Connection aborted.', ConnectionResetError(10054, 'Удаленный хост принудительно разорвал существующее подключение', None, 10054, None))</status>
+</test>
+<kw name="Close App" type="TEARDOWN">
+<kw name="Close Application" owner="AppiumLibrary">
+<kw name="Capture Page Screenshot" owner="AppiumLibrary">
+<msg time="2026-03-21T00:06:40.821675" level="FAIL">No application is open</msg>
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<status status="FAIL" start="2026-03-21T00:06:40.821564" elapsed="0.000849">No application is open</status>
+</kw>
+<msg time="2026-03-21T00:06:40.823116" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg time="2026-03-21T00:06:40.823235" level="FAIL">No application is open</msg>
+<doc>Closes the current application and the webdriver session.</doc>
+<status status="FAIL" start="2026-03-21T00:06:40.821440" elapsed="0.002268">No application is open</status>
+</kw>
+<status status="FAIL" start="2026-03-21T00:06:40.821289" elapsed="0.002514">No application is open</status>
+</kw>
+<status status="FAIL" start="2026-03-21T00:06:31.244006" elapsed="9.579844">Suite setup failed:
+ProtocolError: ('Connection aborted.', ConnectionResetError(10054, 'Удаленный хост принудительно разорвал существующее подключение', None, 10054, None))
+
+Also suite teardown failed:
+No application is open</status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="DemoTest" id="s1" pass="0" fail="1" skip="0">DemoTest</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2026-03-21T00:06:40.817154" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg time="2026-03-21T00:06:40.823116" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+</errors>
+</robot>

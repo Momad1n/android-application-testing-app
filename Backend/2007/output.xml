@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.3 on win32)" generated="2026-03-23T19:18:03.356683" rpa="false" schemaversion="5">
+<suite id="s1" name="DemoTest" source="C:\Users\Momadin\source\repos\AndroidApplicationTestApp\Backend\RobotTests\DemoTest.robot">
+<kw name="Open App" type="SETUP">
+<kw name="Open Application" owner="AppiumLibrary">
+<kw name="Capture Page Screenshot" owner="AppiumLibrary">
+<msg time="2026-03-23T19:18:03.706298" level="FAIL">No application is open</msg>
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<status status="FAIL" start="2026-03-23T19:18:03.706078" elapsed="0.003348">No application is open</status>
+</kw>
+<msg time="2026-03-23T19:18:03.710202" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg time="2026-03-23T19:18:03.710343" level="FAIL">WebDriverException: Message: UIAutomator2 only supports Android 8.0 (Oreo) and above
+Stacktrace:
+UnknownError: UIAutomator2 only supports Android 8.0 (Oreo) and above
+    at getResponseForW3CError (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\protocol\errors.js:824:36)
+    at asyncHandler (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\protocol\protocol.js:430:77)
+The above error is caused by
+Error: UIAutomator2 only supports Android 8.0 (Oreo) and above
+    at Object.errorWithException (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\support\build\lib\logging.js:78:66)
+    at AndroidUiautomator2Driver.performSessionPreExecSetup (C:\Users\Momadin\.appium\node_modules\appium-uiautomator2-driver\build\lib\driver.js:348:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async AndroidUiautomator2Driver.startUiAutomator2Session (C:\Users\Momadin\.appium\node_modules\appium-uiautomator2-driver\build\lib\driver.js:464:25)
+    at async AndroidUiautomator2Driver.createSession (C:\Users\Momadin\.appium\node_modules\appium-uiautomator2-driver\build\lib\driver.js:249:28)
+    at async AppiumDriver.createSession (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\build\lib\appium.js:324:43)</msg>
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>deviceName=${DEVICE_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION}</arg>
+<arg>app=${APP}</arg>
+<arg>appium:automationName=UiAutomator2</arg>
+<doc>Opens a new application to the given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.19/guides/caps/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | No     | alias             |</doc>
+<status status="FAIL" start="2026-03-23T19:18:03.536223" elapsed="0.175094">WebDriverException: Message: UIAutomator2 only supports Android 8.0 (Oreo) and above
+Stacktrace:
+UnknownError: UIAutomator2 only supports Android 8.0 (Oreo) and above
+    at getResponseForW3CError (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\protocol\errors.js:824:36)
+    at asyncHandler (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\protocol\protocol.js:430:77)
+The above error is caused by
+Error: UIAutomator2 only supports Android 8.0 (Oreo) and above
+    at Object.errorWithException (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\support\build\lib\logging.js:78:66)
+    at AndroidUiautomator2Driver.performSessionPreExecSetup (C:\Users\Momadin\.appium\node_modules\appium-uiautomator2-driver\build\lib\driver.js:348:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async AndroidUiautomator2Driver.startUiAutomator2Session (C:\Users\Momadin\.appium\node_modules\appium-uiautomator2-driver\build\lib\driver.js:464:25)
+    at async AndroidUiautomator2Driver.createSession (C:\Users\Momadin\.appium\node_modules\appium-uiautomator2-driver\build\lib\driver.js:249:28)
+    at async AppiumDriver.createSession (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\build\lib\appium.js:324:43)</status>
+</kw>
+<status status="FAIL" start="2026-03-23T19:18:03.535765" elapsed="0.175689">WebDriverException: Message: UIAutomator2 only supports Android 8.0 (Oreo) and above
+Stacktrace:
+UnknownError: UIAutomator2 only supports Android 8.0 (Oreo) and above
+    at getResponseForW3CError (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\protocol\errors.js:824:36)
+    at asyncHandler (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\protocol\protocol.js:430:77)
+The above error is caused by
+Error: UIAutomator2 only supports Android 8.0 (Oreo) and above
+    at Object.errorWithException (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\support\build\lib\logging.js:78:66)
+    at AndroidUiautomator2Driver.performSessionPreExecSetup (C:\Users\Momadin\.appium\node_modules\appium-uiautomator2-driver\build\lib\driver.js:348:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async AndroidUiautomator2Driver.startUiAutomator2Session (C:\Users\Momadin\.appium\node_modules\appium-uiautomator2-driver\build\lib\driver.js:464:25)
+    at async AndroidUiautomator2Driver.createSession (C:\Users\Momadin\.appium\node_modules\appium-uiautomator2-driver\build\lib\driver.js:249:28)
+    at async AppiumDriver.createSession (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\build\lib\appium.js:324:43)</status>
+</kw>
+<test id="s1-t1" name="Demo Test" line="28">
+<doc>Простейший тест</doc>
+<status status="FAIL" start="2026-03-23T19:18:03.711533" elapsed="0.000278">Parent suite setup failed:
+WebDriverException: Message: UIAutomator2 only supports Android 8.0 (Oreo) and above
+Stacktrace:
+UnknownError: UIAutomator2 only supports Android 8.0 (Oreo) and above
+    at getResponseForW3CError (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\protocol\errors.js:824:36)
+    at asyncHandler (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\protocol\protocol.js:430:77)
+The above error is caused by
+Error: UIAutomator2 only supports Android 8.0 (Oreo) and above
+    at Object.errorWithException (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\support\build\lib\logging.js:78:66)
+    at AndroidUiautomator2Driver.performSessionPreExecSetup (C:\Users\Momadin\.appium\node_modules\appium-uiautomator2-driver\build\lib\driver.js:348:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async AndroidUiautomator2Driver.startUiAutomator2Session (C:\Users\Momadin\.appium\node_modules\appium-uiautomator2-driver\build\lib\driver.js:464:25)
+    at async AndroidUiautomator2Driver.createSession (C:\Users\Momadin\.appium\node_modules\appium-uiautomator2-driver\build\lib\driver.js:249:28)
+    at async AppiumDriver.createSession (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\build\lib\appium.js:324:43)</status>
+</test>
+<kw name="Close App" type="TEARDOWN">
+<kw name="Close Application" owner="AppiumLibrary">
+<kw name="Capture Page Screenshot" owner="AppiumLibrary">
+<msg time="2026-03-23T19:18:03.712596" level="FAIL">No application is open</msg>
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<status status="FAIL" start="2026-03-23T19:18:03.712489" elapsed="0.000883">No application is open</status>
+</kw>
+<msg time="2026-03-23T19:18:03.714100" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg time="2026-03-23T19:18:03.714206" level="FAIL">No application is open</msg>
+<doc>Closes the current application and the webdriver session.</doc>
+<status status="FAIL" start="2026-03-23T19:18:03.712373" elapsed="0.002303">No application is open</status>
+</kw>
+<status status="FAIL" start="2026-03-23T19:18:03.712224" elapsed="0.002584">No application is open</status>
+</kw>
+<status status="FAIL" start="2026-03-23T19:18:03.358109" elapsed="0.356769">Suite setup failed:
+WebDriverException: Message: UIAutomator2 only supports Android 8.0 (Oreo) and above
+Stacktrace:
+UnknownError: UIAutomator2 only supports Android 8.0 (Oreo) and above
+    at getResponseForW3CError (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\protocol\errors.js:824:36)
+    at asyncHandler (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\protocol\protocol.js:430:77)
+The above error is caused by
+Error: UIAutomator2 only supports Android 8.0 (Oreo) and above
+    at Object.errorWithException (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\support\build\lib\logging.js:78:66)
+    at AndroidUiautomator2Driver.performSessionPreExecSetup (C:\Users\Momadin\.appium\node_modules\appium-uiautomator2-driver\build\lib\driver.js:348:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async AndroidUiautomator2Driver.startUiAutomator2Session (C:\Users\Momadin\.appium\node_modules\appium-uiautomator2-driver\build\lib\driver.js:464:25)
+    at async AndroidUiautomator2Driver.createSession (C:\Users\Momadin\.appium\node_modules\appium-uiautomator2-driver\build\lib\driver.js:249:28)
+    at async AppiumDriver.createSession (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\build\lib\appium.js:324:43)
+
+Also suite teardown failed:
+No application is open</status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="DemoTest" id="s1" pass="0" fail="1" skip="0">DemoTest</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2026-03-23T19:18:03.710202" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg time="2026-03-23T19:18:03.714100" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+</errors>
+</robot>

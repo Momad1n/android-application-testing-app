@@ -1,0 +1,6 @@
+@AndroidApplicationTestApp_HostAddress = http://localhost:5204
+
+GET {{AndroidApplicationTestApp_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.3 on win32)" generated="2026-03-19T22:26:48.137018" rpa="false" schemaversion="5">
+<suite id="s1" name="DemoTest" source="C:\Users\Momadin\source\repos\AndroidApplicationTestApp\Backend\RobotTests\DemoTest.robot">
+<kw name="Open App" type="SETUP">
+<kw name="Open Application" owner="AppiumLibrary">
+<kw name="Capture Page Screenshot" owner="AppiumLibrary">
+<msg time="2026-03-19T22:26:48.345754" level="FAIL">No application is open</msg>
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<status status="FAIL" start="2026-03-19T22:26:48.345549" elapsed="0.039386">No application is open</status>
+</kw>
+<msg time="2026-03-19T22:26:48.385712" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg time="2026-03-19T22:26:48.385894" level="FAIL">WebDriverException: Message: The requested resource could not be found, or a request was received using an HTTP method that is not supported by the mapped resource.
+Stacktrace:
+UnknownCommandError: The requested resource could not be found, or a request was received using an HTTP method that is not supported by the mapped resource.
+    at catch404Handler (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\express\middleware.js:148:65)
+    at Layer.handleRequest (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\router\index.js:295:15
+    at param (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\router\index.js:600:14)
+    at param (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\router\index.js:610:14)
+    at processParams (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\router\index.js:664:3)
+    at next (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\router\index.js:291:5)
+    at logger (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\morgan\index.js:144:5)
+    at Layer.handleRequest (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\router\index.js:342:13)
+    at C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\router\index.js:297:9
+    at processParams (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\router\index.js:582:12)
+    at next (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\router\index.js:291:5)
+    at C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\body-parser\lib\read.js:171:5
+    at AsyncResource.runInAsyncScope (node:async_hooks:226:14)
+    at invokeCallback (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\raw-body\index.js:238:16)
+    at done (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\raw-body\index.js:227:7)
+    at IncomingMessage.onEnd (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\raw-body\index.js:287:7)</msg>
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>deviceName=${DEVICE_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION}</arg>
+<arg>app=${APP}</arg>
+<arg>automationName=UiAutomator2</arg>
+<doc>Opens a new application to the given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.19/guides/caps/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | No     | alias             |</doc>
+<status status="FAIL" start="2026-03-19T22:26:48.315069" elapsed="0.071807">WebDriverException: Message: The requested resource could not be found, or a request was received using an HTTP method that is not supported by the mapped resource.
+Stacktrace:
+UnknownCommandError: The requested resource could not be found, or a request was received using an HTTP method that is not supported by the mapped resource.
+    at catch404Handler (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\express\middleware.js:148:65)
+    at Layer.handleRequest (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\router\index.js:295:15
+    [ Message content over the limit has been removed. ]
+...AppData\Roaming\npm\node_modules\appium\node_modules\morgan\index.js:144:5)
+    at Layer.handleRequest (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\router\index.js:342:13)
+    at C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\router\index.js:297:9
+    at processParams (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\router\index.js:582:12)
+    at next (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\router\index.js:291:5)
+    at C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\body-parser\lib\read.js:171:5
+    at AsyncResource.runInAsyncScope (node:async_hooks:226:14)
+    at invokeCallback (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\raw-body\index.js:238:16)
+    at done (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\raw-body\index.js:227:7)
+    at IncomingMessage.onEnd (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\raw-body\index.js:287:7)</status>
+</kw>
+<status status="FAIL" start="2026-03-19T22:26:48.314627" elapsed="0.072408">WebDriverException: Message: The requested resource could not be found, or a request was received using an HTTP method that is not supported by the mapped resource.
+Stacktrace:
+UnknownCommandError: The requested resource could not be found, or a request was received using an HTTP method that is not supported by the mapped resource.
+    at catch404Handler (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\express\middleware.js:148:65)
+    at Layer.handleRequest (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\router\index.js:295:15
+    [ Message content over the limit has been removed. ]
+...AppData\Roaming\npm\node_modules\appium\node_modules\morgan\index.js:144:5)
+    at Layer.handleRequest (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\router\index.js:342:13)
+    at C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\router\index.js:297:9
+    at processParams (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\router\index.js:582:12)
+    at next (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\router\index.js:291:5)
+    at C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\body-parser\lib\read.js:171:5
+    at AsyncResource.runInAsyncScope (node:async_hooks:226:14)
+    at invokeCallback (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\raw-body\index.js:238:16)
+    at done (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\raw-body\index.js:227:7)
+    at IncomingMessage.onEnd (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\raw-body\index.js:287:7)</status>
+</kw>
+<test id="s1-t1" name="Demo Test" line="28">
+<doc>Простейший тест</doc>
+<status status="FAIL" start="2026-03-19T22:26:48.387124" elapsed="0.000287">Parent suite setup failed:
+WebDriverException: Message: The requested resource could not be found, or a request was received using an HTTP method that is not supported by the mapped resource.
+Stacktrace:
+UnknownCommandError: The requested resource could not be found, or a request was received using an HTTP method that is not supported by the mapped resource.
+    at catch404Handler (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\express\middleware.js:148:65)
+    at Layer.handleRequest (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\router\index.js:295:15
+    [ Message content over the limit has been removed. ]
+...AppData\Roaming\npm\node_modules\appium\node_modules\morgan\index.js:144:5)
+    at Layer.handleRequest (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\router\index.js:342:13)
+    at C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\router\index.js:297:9
+    at processParams (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\router\index.js:582:12)
+    at next (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\router\index.js:291:5)
+    at C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\body-parser\lib\read.js:171:5
+    at AsyncResource.runInAsyncScope (node:async_hooks:226:14)
+    at invokeCallback (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\raw-body\index.js:238:16)
+    at done (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\raw-body\index.js:227:7)
+    at IncomingMessage.onEnd (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\raw-body\index.js:287:7)</status>
+</test>
+<kw name="Close App" type="TEARDOWN">
+<kw name="Close Application" owner="AppiumLibrary">
+<kw name="Capture Page Screenshot" owner="AppiumLibrary">
+<msg time="2026-03-19T22:26:48.388191" level="FAIL">No application is open</msg>
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<status status="FAIL" start="2026-03-19T22:26:48.388069" elapsed="0.000865">No application is open</status>
+</kw>
+<msg time="2026-03-19T22:26:48.389642" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg time="2026-03-19T22:26:48.389744" level="FAIL">No application is open</msg>
+<doc>Closes the current application and the webdriver session.</doc>
+<status status="FAIL" start="2026-03-19T22:26:48.387954" elapsed="0.002242">No application is open</status>
+</kw>
+<status status="FAIL" start="2026-03-19T22:26:48.387812" elapsed="0.002473">No application is open</status>
+</kw>
+<status status="FAIL" start="2026-03-19T22:26:48.138580" elapsed="0.251749">Suite setup failed:
+WebDriverException: Message: The requested resource could not be found, or a request was received using an HTTP method that is not supported by the mapped resource.
+Stacktrace:
+UnknownCommandError: The requested resource could not be found, or a request was received using an HTTP method that is not supported by the mapped resource.
+    at catch404Handler (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\build\lib\express\middleware.js:148:65)
+    at Layer.handleRequest (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\router\index.js:295:15
+    [ Message content over the limit has been removed. ]
+...AppData\Roaming\npm\node_modules\appium\node_modules\morgan\index.js:144:5)
+    at Layer.handleRequest (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\router\lib\layer.js:152:17)
+    at trimPrefix (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\router\index.js:342:13)
+    at C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\router\index.js:297:9
+    at processParams (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\router\index.js:582:12)
+    at next (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\router\index.js:291:5)
+    at C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\body-parser\lib\read.js:171:5
+    at AsyncResource.runInAsyncScope (node:async_hooks:226:14)
+    at invokeCallback (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\raw-body\index.js:238:16)
+    at done (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\raw-body\index.js:227:7)
+    at IncomingMessage.onEnd (C:\Users\Momadin\AppData\Roaming\npm\node_modules\appium\node_modules\raw-body\index.js:287:7)
+
+Also suite teardown failed:
+No application is open</status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="DemoTest" id="s1" pass="0" fail="1" skip="0">DemoTest</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2026-03-19T22:26:48.385712" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg time="2026-03-19T22:26:48.389642" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+</errors>
+</robot>

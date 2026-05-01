@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/Элементы решения/">
+    <File Path="docker-compose.yml" />
+  </Folder>
+  <Project Path="Backend.BDDTests/Backend.BDDTests.csproj" Id="20d9a7ba-3ae5-40a1-a66c-3ca9e498d13a" />
+  <Project Path="Backend.UnitTests/Backend.UnitTests.csproj" Id="96394178-5954-4e28-965d-f3ba71de88d8" />
+  <Project Path="Backend/Backend.csproj" Id="52a09c75-aa18-4e96-b45c-ee9df5f40287" />
+  <Project Path="Client.UITests/Client.UITests.csproj" Id="efd4bbff-d540-473b-b7e8-c1c22233325f" />
+  <Project Path="Client/Client.csproj" Id="9a63a2f2-3773-406a-be25-0d33bd0b2db2" />
+  <Project Path="Tests/Tests.csproj" Id="0f023af6-56ec-495d-b692-208505a8e381" />
+</Solution>

@@ -1,0 +1,92 @@
+﻿@page "/testruns"
+@using System.Net.Http.Json
+@using Client.Models
+@inject HttpClient Http
+
+<h1>Test Runs</h1>
+
+@if (runs == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Scenario ID</th>
+                <th>Status</th>
+                <th>Created</th>
+                <th>Duration</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var run in runs.OrderByDescending(r => r.CreatedDate))
+            {
+                <tr>
+                    <td>@run.Id</td>
+                    <td>@run.TestScenarioId</td>
+                    <td>
+                        <span class="badge @GetBadgeClass(run.Status)">@run.Status</span>
+                    </td>
+                    <td>@run.CreatedDate.ToLocalTime().ToString("g")</td>
+                    <td>@(run.EndTime.HasValue && run.StartTime.HasValue ? (run.EndTime.Value - run.StartTime.Value).ToString(@"mm\:ss") : "-")</td>
+                    <td>
+                        <button class="btn btn-sm btn-primary" @onclick="() => ShowLog(run.ExecutionLog)">View Log</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@if (selectedLog != null)
+{
+    <div class="log-modal-overlay">
+        <div class="log-modal-content">
+            <h4>Execution Log</h4>
+            <pre>@selectedLog</pre>
+            <button class="btn btn-secondary mt-2" @onclick="() => selectedLog = null">Close</button>
+        </div>
+    </div>
+}
+
+@code {
+    private List<TestRun>? runs;
+    private string? selectedLog;
+
+    protected override async Task OnInitializedAsync()
+    {
+        runs = await Http.GetFromJsonAsync<List<TestRun>>("api/TestRuns");
+    }
+
+    private void ShowLog(string? log)
+    {
+        selectedLog = string.IsNullOrWhiteSpace(log) ? "No logs available for this run." : log;
+    }
+
+    private string GetBadgeClass(TestRunStatus status) => status switch
+    {
+        TestRunStatus.Passed => "bg-success",
+        TestRunStatus.Failed => "bg-danger",
+        TestRunStatus.Running => "bg-warning text-dark",
+        TestRunStatus.Pending => "bg-secondary",
+        _ => "bg-info"
+    };
+}
+
+<style>
+    .table { width: 100%; margin-top: 20px; }
+    .log-modal-overlay {
+        position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+        background: rgba(0,0,0,0.5); display: flex; justify-content: center; align-items: center;
+        z-index: 1000;
+    }
+    .log-modal-content {
+        background: white; padding: 20px; border-radius: 8px;
+        width: 80%; max-width: 800px; max-height: 80vh; overflow-y: auto;
+    }
+    pre { background: #f4f4f4; padding: 10px; border-radius: 5px; }
+</style>
