@@ -12,7 +12,7 @@ namespace Backend.SystemTests
     {
         private static readonly HttpClient _client = new HttpClient
         {
-            BaseAddress = new Uri("https://localhost:7293") // поменяй порт
+            BaseAddress = new Uri("https://localhost:7293")
         };
 
 

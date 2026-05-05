@@ -2,10 +2,12 @@ using Backend.Data;
 using Backend.Domain;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
 namespace Backend.Workers;
 
+[ExcludeFromCodeCoverage]
 public class TestExecutionWorker : BackgroundService
 {
     private readonly IServiceScopeFactory _scopeFactory;

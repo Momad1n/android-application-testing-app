@@ -1,47 +1,62 @@
-using Microsoft.AspNetCore.Authentication;
-using NUnit.Framework;
 using Backend.Services;
+using NUnit.Framework;
 
-namespace Backend.UnitTests;
-
-[TestFixture]
-public class PasswordPolicyTests
+namespace Backend.UnitTests
 {
-
-    [SetUp]
-    public void Setup()
+    [TestFixture]
+    public class PasswordPolicyTests
     {
+        private string _testPassword; [SetUp]
+        public void Setup()
+        {
+            _testPassword = string.Empty;
+        }
 
-    }
+        [Test]
+        public void IsPasswordStrong_LengthIs8ButNoDigit_ReturnsFalse()
+        {
+            
+            _testPassword = "password"; 
+            
+            bool result = AuthenticationService.IsPasswordStrong(_testPassword);
 
-    [Test]
-    public void IsPasswordStrong_PasswordShorterThan8_ReturnsFalse()
-    {
-        bool result = Backend.Services.AuthenticationService.IsPasswordStrong("short1");
+            Assert.That(result, Is.False);
+        }
 
-        Assert.That(result, Is.False);
-    }
+        [Test]
+        public void IsPasswordStrong_NullOrEmptyPassword_ReturnsFalse()
+        {
+            bool resultNull = AuthenticationService.IsPasswordStrong(null);
+            bool resultEmpty = AuthenticationService.IsPasswordStrong(string.Empty);
 
-    [Test]
-    public void IsPasswordStrong_LengthIs8ButNoDigit_ReturnsFalse()
-    {
-        bool result = Backend.Services.AuthenticationService.IsPasswordStrong("password");
+            Assert.That(resultNull, Is.False);
+            Assert.That(resultEmpty, Is.False);
+        }
 
-        Assert.That(result, Is.False);
-    }
+        [Test]
+        public void IsPasswordStrong_PasswordShorterThan8_ReturnsFalse()
+        {
+            // Arrange
+            _testPassword = "Pass1"; 
 
-    [Test]
-    public void IsPasswordStrong_NullOrEmptyPassword_ReturnsFalse()
-    {
-        Assert.That(Backend.Services.AuthenticationService.IsPasswordStrong(null), Is.False);
-        Assert.That(Backend.Services.AuthenticationService.IsPasswordStrong(""), Is.False);
-    }
+            // Act
+            bool result = AuthenticationService.IsPasswordStrong(_testPassword);
 
-    [Test]
-    public void IsPasswordStrong_ValidPassword_ReturnsTrue()
-    {
-        bool result = Backend.Services.AuthenticationService.IsPasswordStrong("StrongPass1");
+            // Assert
+            Assert.That(result, Is.False);
+        }
 
-        Assert.That(result, Is.True);
+        [Test]
+        public void IsPasswordStrong_ValidPassword_ReturnsTrue()
+        {
+            // Arrange
+            _testPassword = "StrongPassword123"; 
+
+            // Act
+            bool result = AuthenticationService.IsPasswordStrong(_testPassword);
+
+            // Assert
+            Assert.That(result, Is.True);
+        }
     }
 }

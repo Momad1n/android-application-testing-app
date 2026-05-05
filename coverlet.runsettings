@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<RunSettings>
+  <DataCollectionRunSettings>
+    <DataCollectors>
+      <DataCollector friendlyName="XPlat code coverage">
+        <Configuration>
+          <Format>cobertura</Format>
+          <!-- Включаем в анализ ТОЛЬКО бэкенд (отсекаем Blazor и UI тесты) -->
+          <Include>[Backend]*</Include>
+          <!-- Исключаем из бэкенда Миграции, Воркеры и Фабрики -->
+          <Exclude>[Backend]Backend.Migrations.*,[Backend]Backend.Workers.*,[Backend]Backend.Data.AppDbContextFactory</Exclude>
+          <!-- Исключаем автосгенерированный код -->
+          <ExcludeByAttribute>GeneratedCodeAttribute,CompilerGeneratedAttribute</ExcludeByAttribute>
+        </Configuration>
+      </DataCollector>
+    </DataCollectors>
+  </DataCollectionRunSettings>
+</RunSettings>

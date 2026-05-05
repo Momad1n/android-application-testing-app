@@ -1,4 +1,4 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Net.Http;
 using System.Text;
@@ -12,7 +12,7 @@ namespace Backend.SystemTests
     {
         private static readonly HttpClient _client = new HttpClient
         {
-            BaseAddress = new Uri("https://localhost:7293") // поправь порт
+            BaseAddress = new Uri("https://localhost:7293")
         };
 
         private int _scenarioId;
