@@ -32,7 +32,7 @@ jobs:
       # Строгая проверка: если есть ошибки анализатора, билд упадет
       run: dotnet build --no-restore -c Release -warnaserror
 
-- name: Run Unit Tests & Collect Coverage
+    - name: Run Unit Tests & Collect Coverage
       run: dotnet test --no-build -c Release --filter FullyQualifiedName~UnitTests --collect:"XPlat Code Coverage" --results-directory ./TestResults
       
     - name: Generate Code Coverage Summary Report
